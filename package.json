@@ -1,0 +1,24 @@
+{
+  "name": "client_server_ft",
+  "version": "0.0.1",
+  "description": "A school assignment to create Client and Server applications to implement file transfer using both UDP and TCP protocols",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qwalley/Client-ServerFT.git"
+  },
+  "author": "Will Alley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qwalley/Client-ServerFT/issues"
+  },
+  "homepage": "https://github.com/qwalley/Client-ServerFT#readme",
+  "dependencies": {
+    "buffer": "^5.0.5",
+    "fs": "0.0.1-security",
+    "net": "^1.0.2"
+  }
+}
