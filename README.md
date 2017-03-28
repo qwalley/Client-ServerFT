@@ -19,4 +19,4 @@ A school assignment to create Client and Server applications for file transfer u
 * run: `$node tcp_client.js`
 * type `your_file.txt` and hit enter
 * Now the file is saved in `Client_ServerFT/src/client/downloads/`
-* type `exit` and hit enter to end the process
+* type `exit` and hit enter to end the process, or request a second file
