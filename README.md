@@ -1,8 +1,6 @@
 # Client-ServerFT
-A school assignment to create Client and Server applications for file transfer using TCP and UDP. Built with Node.js
+A school assignment to create Client and Server applications for file transfer using TCP socket programming. Built with Node.js
 
 ## todo:
-* Implement file writing in src/tcp/client.js
-* Create src/udp/server.js
-* Create src/udp/client.js
-* Create more sample files in public/
+* Implement functionality to allow client to make multiple requests
+* Create more sample files in server/public/
