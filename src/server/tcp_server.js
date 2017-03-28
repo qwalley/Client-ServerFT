@@ -7,7 +7,7 @@ var buffer = require('buffer');
 
 const HOST = '127.0.0.1';
 const PORT = '9001';
-const FILEPATH = '../../public/';
+const FILEPATH = './public/';
 
 var server = net.createServer(function(socket) {
 	console.log('server connected');
@@ -26,22 +26,31 @@ var server = net.createServer(function(socket) {
 		else if (data == 'afile.txt'){
 			var fileStream = fs.createReadStream(FILEPATH + data);
 			
+			// there is an issue with the file
 			fileStream.on('error', function(err){
 				console.log(err);
-				socket.write('ACK: There was a problem retrieving that file');
+				socket.write('NACK: There was a problem retrieving that file');
 				console.log('sent: \'ACK: There was a problem retrieving that file\'');
 			});
 
+			// the file is found and opened 
 			fileStream.on('open',function() {
-				socket.write('ACK: sending file now');
-				console.log('sent: \'ACK: sending file now\'');
+				socket.write('FTR');
+				console.log('sent: \'FTR\'');
 				console.log('sending \'' + data +'\'');
 				fileStream.pipe(socket);
-				console.log('file transfer complete');
+				// BAD:
+				/*
+				var chunk = fileStream.read();
+				if (chunk !== null) {	
+					socket.write(chunk);
+					console.log('file transfer complete');
+				}
+				*/
 			});
 		}
 		else {
-			socket.write('ACK: That file does not exist on our server');
+			socket.write('NACK: That file does not exist on our server');
 			console.log('sent: \'ACK: That file does not exist on our server\'');
 		}
 	});
